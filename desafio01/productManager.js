@@ -35,6 +35,11 @@ class ProductManager {
     }
 
     addProduct(title, description, price, thumbnail, code, stock){
+
+        if(!title || !description || !price || !thumbnail || !code || !stock){
+            console.log('all values are require')
+            return
+        }
         
         const validateCode = this.#products.find(c=> c.code == code)
 
