@@ -3,22 +3,9 @@
 class ProductManager {
     
     #products
-    #title
-    #description
-    #price
-    #thumbnail
-    #code
-    #stock
 
     constructor(){
         this.#products = []
-        this.#title = ''
-        this.#description = ''
-        this.#price = ''
-        this.#thumbnail = ''
-        this.#code = ''
-        this.#stock = ''
-
     }
 
 
