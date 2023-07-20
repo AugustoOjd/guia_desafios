@@ -5,10 +5,13 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "node ./desafio02/app.js",
+    "dev": "nodemon ./desafio03/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
