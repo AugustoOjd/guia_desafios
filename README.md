@@ -7,10 +7,10 @@ No es la unica manera de resolver los desafios, simplemente es un ejemplo mas.
 
 - Desafio 01
 - Desafio 02
-
+- Desafio 03
 
 ## Iniciar proyecto
 
 - npm i
 - npm run dev (modificar en el package.json el desafio que se va a ejecutar) 
-    ejemplo: "dev": "node ./desafio02/app.js"
+    ejemplo: "dev": "node ./<nombre carpeta>/app.js"
