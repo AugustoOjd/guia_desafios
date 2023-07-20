@@ -13,4 +13,4 @@ No es la unica manera de resolver los desafios, simplemente es un ejemplo mas.
 
 - npm i
 - npm run dev (modificar en el package.json el desafio que se va a ejecutar) 
-    ejemplo: "dev": "node ./<nombre carpeta>/app.js"
+    ejemplo: "dev": "node ./*nombrecaperta/app.js"
