@@ -8,6 +8,7 @@ No es la unica manera de resolver los desafios, simplemente es un ejemplo mas.
 - Desafio 01
 - Desafio 02
 - Desafio 03
+- Pre-entrega 01
 
 ## Iniciar proyecto
 
