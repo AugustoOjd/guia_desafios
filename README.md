@@ -10,6 +10,7 @@ No es la unica manera de resolver los desafios, simplemente es un ejemplo mas.
 - Desafio 03
 - Pre-entrega 01 / desafio04
 - Desafio 05
+- checkpoint-session + passport + endpoints
 
 ## Iniciar proyecto
 
