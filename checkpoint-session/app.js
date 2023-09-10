@@ -6,6 +6,8 @@ import session from 'express-session'
 import {dbConnection} from './dao/db/configDb.js'
 import cookieParser from 'cookie-parser'
 import MongoStore from 'connect-mongo'
+import passport from 'passport'
+import initializePassport from './services/passport.service.js'
 
 const app = express()
 const port = 8080
@@ -23,6 +25,10 @@ app.use(session({
   saveUninitialized: false,
   cookie: {maxAge: 60000}
 }))
+
+initializePassport()
+app.use(passport.initialize())
+app.use(passport.session())
 
 app.use('/api/products', productRouter)
 app.use('/api/carts', cartRouter)

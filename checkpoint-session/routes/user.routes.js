@@ -1,13 +1,14 @@
 import { Router } from "express";
 import {signinController, signupController, logoutController} from '../controllers/user.controller.js'
+import passport from "passport";
 
 const router = Router()
 
 
 
-router.post('/signup', signupController)
+router.post('/signup', passport.authenticate('signup'), signupController)
 
-router.get('/signin', signinController)
+router.get('/signin', passport.authenticate('signin'), signinController)
 
 router.get('/logout', logoutController)
 

@@ -3,21 +3,18 @@ import {signinService, signupService, logoutService} from '../services/user.serv
 
 export const signupController = async (req=request, res=response) =>{
     try {
-        const {first_name,last_name, email,age, password} = req.body
-        
-        const data = await signupService(first_name,last_name, email,age, password)
 
-        req.session.userId = data._id
+        req.session.user = {
+            firstName:  req.user.first_name,
+            lastName:   req.user.last_name,
+            age:        req.user.age,
+            email:      req.user.email
+        }
 
         return res.status(201).json({
             status: "success",
             detail: "user registrado correctamente",
-            payload: {
-                userName: data.first_name,
-                userLastName: data.last_name,
-                age: data.age,
-                email: data.email
-            }
+            payload: req.session.user
         })
     } catch (error) {
         return res.json({error})
@@ -26,21 +23,19 @@ export const signupController = async (req=request, res=response) =>{
 
 export const signinController = async (req=request, res=response) =>{
     try {
-        const {email, password} = req.body
+    if(!req.user) return res.status(400).json({ status: 'error', msg: 'Credenciales invalidas'})
 
-        const data = await signinService(email, password)
-
-        req.session.userId = data._id
+    req.session.user = {
+        firstName:  req.user.first_name,
+        lastName:   req.user.last_name,
+        age:        req.user.age,
+        email:      req.user.email
+    }
 
         return res.status(201).json({
             status: "success",
-            detail: "user registrado correctamente",
-            payload: {
-                userName: data.first_name,
-                userLastName: data.last_name,
-                age: data.age,
-                email: data.email
-            }
+            detail: "user login correctamente",
+            payload: req.session.user
         })
     } catch (error) {
         return res.json({error})
@@ -49,7 +44,6 @@ export const signinController = async (req=request, res=response) =>{
 
 export const logoutController = async (req=request, res=response) =>{
     try {
-
             req.session.destroy(function(err) {
                 if(err){
                     console.log(err)
